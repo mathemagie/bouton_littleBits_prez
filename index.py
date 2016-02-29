@@ -16,3 +16,5 @@ while True:
 	print str
 	if 'on' in str:
 		touche_next()
+	if 'prev' in str:
+		touche_prev()
