@@ -25,16 +25,20 @@ littleBits Arduino Module
 
 // constants are variables whose values won't change:
 const int  buttonPin = A0;    // the pin that the pushbutton is attached to
+
+const int  buttonPin1 = A1;    // the pin that the pushbutton is attached to
 const int ledPin = 5;       // the pin that the LED is attached to
 
 // these variables values will change:
 int buttonPushCounter = 0;   // counter for the number of button presses
-int buttonState = 0;         // current state of the button
+int buttonState = 0; 
+int buttonState1 = 0; // current state of the button
 int lastButtonState = 0;     // previous state of the button
 
 void setup() {
   // initialize the button pin as a input:
   pinMode(buttonPin, INPUT);
+  pinMode(buttonPin1, INPUT);
   // initialize the LED as an output:
   pinMode(ledPin, OUTPUT);
   // initialize serial communication:
@@ -50,6 +54,16 @@ void loop() {
     if (buttonState == HIGH) {
   
       Serial.println("on"); 
+    }else {
+        Serial.println("off"); 
+    }
+    
+     buttonState1 = digitalRead(buttonPin1);
+
+
+    if (buttonState1 == HIGH) {
+  
+      Serial.println("prev"); 
     }else {
         Serial.println("off"); 
     }
